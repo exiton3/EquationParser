@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationSimplifier", "EquationSimplifier\EquationSimplifier.csproj", "{66E0C9D0-1649-4505-B367-248940836CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationSimplification", "EquationSimplifier\EquationSimplification.csproj", "{66E0C9D0-1649-4505-B367-248940836CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationSimplifier.Tests", "EquationSimplifier.Tests\EquationSimplifier.Tests.csproj", "{FFC9FFF4-CED8-49F9-8D66-7318A81AF751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquationSimplification.Tests", "EquationSimplifier.Tests\EquationSimplification.Tests.csproj", "{FFC9FFF4-CED8-49F9-8D66-7318A81AF751}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

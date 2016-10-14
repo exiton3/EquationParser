@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EquationSimplifier.Lex
+namespace EquationSimplification.Lex
 {
     public interface ITokenizer
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace EquationSimplifier.Lex
+namespace EquationSimplification.Lex
 {
     public class Tokenizer : ITokenizer
     {
@@ -14,11 +14,11 @@ namespace EquationSimplifier.Lex
         {
             patterns = new Dictionary<TokenKind, Regex>
                            {
-                               {TokenKind.Constant, new Regex(@"^([0|1]{1})|true|false$")},
-                               {TokenKind.And, new Regex(@"^&|and$")},
-                               {TokenKind.Or, new Regex(@"^[\|]{2}|or$")},
-                               {TokenKind.Not, new Regex(@"^[!]{1}|not$")},
-                               {TokenKind.Variable, new Regex(@"^[\w]+$")},
+                               {TokenKind.Constant, new Regex(@"^([\+-]?[\d]+([\.]\d+)?)$")},
+                               {TokenKind.Plus, new Regex(@"^[\+]$")},
+                               {TokenKind.Minus, new Regex(@"^[\-]$")},
+                               {TokenKind.Product, new Regex(@"^[\*]$")},
+                               {TokenKind.Power, new Regex( @"^((?<Koef>[\+-]?[\d\.]*)(?<Var>[a-z\^\d]+))$")},
                                {TokenKind.LParen, new Regex(@"^\($")},
                                {TokenKind.RParen, new Regex(@"^\)$")},
                            };
@@ -52,7 +52,7 @@ namespace EquationSimplifier.Lex
 
         private string[] GetInputStrings(string input)
         {
-            string resString = input.Replace("(", "( ").Replace(")", " )");
+            string resString = input.Replace("(", "( ").Replace(")", " )").Replace("+"," + ").Replace("-"," - ");
             return resString.ToLower().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
         }
 

@@ -1,12 +1,13 @@
-namespace EquationSimplifier.Lex
+namespace EquationSimplification.Lex
 {
     public enum TokenKind
     {
         Constant,
-        And,
-        Or,
-        Not,
+        Plus,
+        Minus,
+        Power,
         Variable,
+        Product,
         LParen,
         RParen
     }

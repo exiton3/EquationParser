@@ -1,4 +1,4 @@
-namespace EquationSimplifier.Lex
+namespace EquationSimplification.Lex
 {
     public class Token
     {
