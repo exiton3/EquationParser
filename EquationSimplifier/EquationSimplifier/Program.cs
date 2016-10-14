@@ -52,7 +52,7 @@ namespace EquationSimplification
         {
             do
             {
-                WriteLine("Enter equation to simplify (all members should be separated with Space): \n");
+                WriteLine("Enter equation to simplify: \n");
                 string input = ReadLine();
                 WriteLine("Simplifed equation");
 
