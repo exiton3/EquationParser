@@ -43,10 +43,7 @@ namespace EquationSimplification.Parser
                     var members = ParseExpression();
 
                     equationMembers.AddRange(members.Select(x => new EquationMember
-                    {
-                        Coef = x.Coef*multiplier,
-                        Parameter = x.Parameter
-                    }).ToList());
+                    ( x.Parameter,x.Coef*multiplier)).ToList());
                     GetNextToken();
                     continue;
                 }
@@ -78,7 +75,7 @@ namespace EquationSimplification.Parser
                     {
                         val *= -1;
                     }
-                    equationMembers.Add(new EquationMember {Coef = val, Parameter = "Const"});
+                    equationMembers.Add(new EquationMember("Const", val));
                     GetNextToken();
                     continue;
                 }
@@ -104,7 +101,7 @@ namespace EquationSimplification.Parser
                         coef *= -1;
                     }
 
-                    equationMembers.Add(new EquationMember {Coef = coef, Parameter = parameter});
+                    equationMembers.Add(new EquationMember ( parameter,coef));
                 }
 
                 GetNextToken();

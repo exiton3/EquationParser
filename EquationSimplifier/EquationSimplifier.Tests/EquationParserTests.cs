@@ -68,18 +68,5 @@ namespace EquationSimplification.Tests
         }
 
 
-        [Test]
-        public void CanParseDoubleNegativeConstants()
-        {
-            var equationString = "3x - -5";
-
-            var result = parser.Parse(equationString).ToList();
-
-            Print(result);
-            Assert.That(result[1].Parameter, Is.EqualTo("Const"));
-            Assert.That(result[1].Coef, Is.EqualTo(5.0));
-        }
-
-
     }
 }

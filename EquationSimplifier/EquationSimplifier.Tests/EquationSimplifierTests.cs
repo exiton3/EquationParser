@@ -81,12 +81,12 @@ namespace EquationSimplification.Tests
         [Test]
         public void CanSimplifyIfLeftPartBecomeZeroFromConstants2()
         {
-            var equationString = " x = 1";
+            var equationString = " 3xy -2yx = 0";
 
             var result = simplifier.Simplify(equationString);
             Console.WriteLine(result);
 
-           // Assert.That(result, Is.EqualTo("0 = 0"));
+            Assert.That(result, Is.EqualTo("xy = 0"));
         }
 
         [Test]

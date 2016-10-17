@@ -48,6 +48,8 @@
     <Compile Include="EquationSimplifier.cs" />
     <Compile Include="Parser\IEquationParser.cs" />
     <Compile Include="Lex\ITokenizer.cs" />
+    <Compile Include="Parser\Member.cs" />
+    <Compile Include="Parser\PowerParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lex\Token.cs" />

@@ -64,7 +64,7 @@ namespace EquationSimplification.Tests
             Assert.That(tokens[1].Name, Is.EqualTo(TokenKind.Plus));
             Assert.That(tokens[2].Name, Is.EqualTo(TokenKind.LParen));
         }
-
+      
         private static void Print(IEnumerable<Token> tokens)
         {
             foreach (var token in tokens)

@@ -30,7 +30,7 @@ namespace EquationSimplification
 
             var equationMembers = parser.Parse(leftPart);
             var membersRightPart= parser.Parse(rightPart)
-                .Select(x=> new EquationMember {Parameter = x.Parameter, Coef = x.Coef*-1});
+                .Select(x=> new EquationMember ( x.Parameter, x.Coef*-1));
            equationMembers = equationMembers.Union(membersRightPart);
 
             var parsedTokens = Simplify(equationMembers);
@@ -42,11 +42,7 @@ namespace EquationSimplification
                 var sum = parsedToken.Value.Sum();
                 if (sum != 0.0)
                 {
-                    members.Add( new EquationMember
-                    {
-                        Coef = sum,
-                        Parameter = parsedToken.Key
-                    });
+                    members.Add( new EquationMember( parsedToken.Key,sum));
                 }
             }
             
@@ -61,6 +57,8 @@ namespace EquationSimplification
 
             foreach (var member in equationMembers)
             {
+                member.Normalize();
+
                 if (parsedTokens.ContainsKey(member.Parameter))
                 {
                     parsedTokens[member.Parameter].Add(member.Coef);

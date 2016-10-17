@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EquationMemberTests.cs" />
     <Compile Include="EquationParserTests.cs" />
     <Compile Include="EquationSimplifierTests.cs" />
+    <Compile Include="PowerParserTests.cs" />
     <Compile Include="TokenizerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
