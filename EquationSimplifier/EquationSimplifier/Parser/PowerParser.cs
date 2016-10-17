@@ -9,7 +9,6 @@ namespace EquationSimplification.Parser
         {
             var myRegex = new Regex(@"(?<Var>[a-z])([\^](?<Pow>\d+))?", RegexOptions.None);
 
-
             var members = new List<Member>();
 
             foreach (Match match in myRegex.Matches(input))
@@ -27,10 +26,7 @@ namespace EquationSimplification.Parser
                 members.Add(member);
                 
             }
-
-
-
-
+            
             return members;
         }
     }
