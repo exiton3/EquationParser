@@ -7,11 +7,11 @@ namespace EquationSimplification.Parser
     {
         public IEnumerable<Member> Parse(string input)
         {
-            var myRegex = new Regex(@"(?<Var>[a-z])([\^](?<Pow>\d+))?", RegexOptions.None);
+            var regex = new Regex(@"(?<Var>[a-z])([\^](?<Pow>\d+))?", RegexOptions.None);
 
             var members = new List<Member>();
 
-            foreach (Match match in myRegex.Matches(input))
+            foreach (Match match in regex.Matches(input))
             {
                 if (!match.Success) continue;
 
